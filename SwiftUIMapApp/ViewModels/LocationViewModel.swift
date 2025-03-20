@@ -24,6 +24,8 @@ import SwiftUI
     
     var showingList : Bool = false
     
+    var showLocationDetail : Bool = false
+    
     init(){
         let locations = LocationsDataService.locations
         self.locations = locations
@@ -64,6 +66,9 @@ import SwiftUI
         
         
         showLocation(location: locations[nextIndex])
+    }
+    func showDetail(){
+        showLocationDetail = true
     }
    
     

@@ -10,6 +10,7 @@ import SwiftUI
 struct LocationPreviewView: View {
     let location : Location
     let onNextPressed : () -> Void
+    let learMoreAction : () -> Void
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 16.0) {
@@ -21,6 +22,7 @@ struct LocationPreviewView: View {
             
             VStack(spacing: 8.0){
                 Button {
+                    learMoreAction()
                     
                 } label: {
                     Text("Learn more")
@@ -84,5 +86,5 @@ extension LocationPreviewView {
 #Preview {
     LocationPreviewView(location: LocationsDataService.locations.first!){
         
-    }
+    } learMoreAction: {}
 }

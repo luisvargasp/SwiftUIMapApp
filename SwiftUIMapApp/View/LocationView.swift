@@ -42,6 +42,8 @@ struct LocationView: View {
                    
                     LocationPreviewView(location: vm.mapLocation){
                         vm.nextButtonPressed()
+                    } learMoreAction:{
+                        vm.showDetail()
                     }
                             .shadow(color : .black.opacity(0.3) ,radius: 20)
                             .padding()
@@ -52,7 +54,11 @@ struct LocationView: View {
             }
 
         }
+        .sheet(isPresented: $vmb.showLocationDetail , content: {
+            LocationDetailView(location: vm.mapLocation)
+        })
     }
+           
 }
 
 extension LocationView {
